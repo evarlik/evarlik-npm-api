@@ -1,4 +1,5 @@
-import {add, EvarlikRest} from '../index';
+import {EvarlikRest} from "../src/evarlik-rest";
+
 
 var assert = require('assert');
 describe('Array', function () {
