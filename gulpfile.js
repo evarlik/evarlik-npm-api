@@ -3,8 +3,9 @@ const ts = require('gulp-typescript');
 const jasmine = require('gulp-jasmine');
 const clean = require('gulp-clean');
 const runSequence = require('run-sequence');
+var typedoc = require("gulp-typedoc");
 
-gulp.task('build', function() {
+gulp.task('build', function () {
     const merge = require('merge2');
     const tsProject = ts.createProject('tsconfig.json');
 
@@ -18,22 +19,32 @@ gulp.task('build', function() {
 });
 
 gulp.task('clean', function () {
-    return gulp.src('dist', { read: false })
+    return gulp.src('dist', {read: false})
         .pipe(clean());
 });
 
-gulp.task('test:run', function() {
+gulp.task('test:run', function () {
     return gulp.src('dist/spec/**')
-      .pipe(jasmine())
+        .pipe(jasmine())
 });
 
-gulp.task('watch', ['default'], function() {
+gulp.task('typedoc', function () {
+    return gulp.src(['*.ts'])
+        .pipe(typedoc({
+            module: 'commonjs',
+            target: 'es5',
+            out: 'docs/',
+            name: 'Evarlik Api'
+        }));
+});
+
+gulp.task('watch', ['default'], function () {
     gulp.watch('src/*.ts', ['default']);
 });
 
-gulp.task('test', [], function(cb) {
-  runSequence('clean', 'build', 'test:run', cb);
+gulp.task('test', [], function (cb) {
+    runSequence('clean', 'build', 'test:run', cb);
 });
-gulp.task('default', [], function(cb) {
+gulp.task('default', [], function (cb) {
     runSequence('clean', 'build', cb);
 });

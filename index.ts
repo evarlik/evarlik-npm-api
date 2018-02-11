@@ -28,15 +28,30 @@ export class EvarlikRest {
         }
     }
 
-
+    /**
+     *
+     * @param {{mail: string; password: string}} body
+     * @param callback
+     * @returns {Promise<any>}
+     */
     login(body: { mail: string, password: string }, callback?) {
         return this.makeRequest({}, body, callback, 'user/login', false, 'POST');
     }
 
+    /**
+     *
+     * @param callback
+     * @returns {Promise<EvResult<PriceModel>>}
+     */
     price(callback?): Promise<EvResult<PriceModel>> {
         return this.makeRequest<EvResult<PriceModel>>({}, null, callback, 'price/all', false, 'GET');
     }
 
+    /**
+     *
+     * @param callback
+     * @returns {Promise<EvResult<CoinBalanceModel[]>>}
+     */
     allCoinBalance(callback?): Promise<EvResult<CoinBalanceModel[]>> {
         return this.makeRequest<EvResult<CoinBalanceModel[]>>({}, null, callback, 'UserCoinTransactionOrder/AllCoinBalance', true, 'GET');
     }
