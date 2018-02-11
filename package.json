@@ -1,6 +1,6 @@
 {
   "name": "@evarlik/api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "typings": "definitions/index",
   "typescript": {
@@ -16,6 +16,7 @@
     "gulp-jasmine": "^2.4.2",
     "gulp-typescript": "^3.1.3",
     "jasmine": "^2.5.2",
+    "jsdoc": "^3.5.5",
     "merge2": "^1.0.2",
     "rimraf": "~2.5.4",
     "run-sequence": "^1.2.2",
@@ -39,5 +40,25 @@
     "querystring": "^0.2.0",
     "request": "^2.83.0",
     "underscore": "^1.8.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evarlik/evarlik-npm-api.git"
+  },
+  "keywords": [
+    "evarlik",
+    "coin",
+    "api",
+    "cardano",
+    "ada",
+    "ripple",
+    "xrp",
+    "bitcoin",
+    "btc",
+    "trading"
+  ],
+  "bugs": {
+    "url": "https://github.com/evarlik/evarlik-npm-api/issues"
+  },
+  "homepage": "https://github.com/evarlik/evarlik-npm-api#readme"
 }
