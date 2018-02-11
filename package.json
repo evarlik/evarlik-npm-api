@@ -1,6 +1,6 @@
 {
   "name": "@evarlik/api",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "dist/index.js",
   "typings": "definitions/index",
   "typescript": {
@@ -39,6 +39,7 @@
     "@types/es6-shim": "^0.31.32",
     "@types/jasmine": "^2.5.38",
     "assert": "^1.4.1",
+    "crypto": "^1.0.1",
     "querystring": "^0.2.0",
     "request": "^2.83.0",
     "underscore": "^1.8.3"
